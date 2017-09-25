@@ -21,10 +21,6 @@
         <type>Default</type>
     </actionOverrides>
     <actionOverrides>
-        <actionName>Follow</actionName>
-        <type>Default</type>
-    </actionOverrides>
-    <actionOverrides>
         <actionName>List</actionName>
         <type>Default</type>
     </actionOverrides>
@@ -44,13 +40,16 @@
         <actionName>View</actionName>
         <type>Default</type>
     </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
     <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
     <deploymentStatus>Deployed</deploymentStatus>
     <enableActivities>false</enableActivities>
     <enableBulkApi>true</enableBulkApi>
+    <enableChangeDataCapture>false</enableChangeDataCapture>
     <enableFeeds>false</enableFeeds>
     <enableHistory>false</enableHistory>
     <enableReports>false</enableReports>
+    <enableSearch>true</enableSearch>
     <enableSharing>true</enableSharing>
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
@@ -92,20 +91,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>Score__c</fullName>
-        <defaultValue>0</defaultValue>
-        <description>If value is 1 then the process can be merged
-If value is 0 it cannot be merged</description>
-        <externalId>false</externalId>
-        <label>Score</label>
-        <precision>1</precision>
-        <required>true</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-        <fields>
         <fullName>EstimatedHours__c</fullName>
         <externalId>false</externalId>
         <label>Estimated Hours</label>
@@ -122,6 +107,20 @@ If value is 0 it cannot be merged</description>
         <label>RealHours</label>
         <precision>18</precision>
         <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Score__c</fullName>
+        <defaultValue>0</defaultValue>
+        <description>If value is 1 then the process can be merged
+If value is 0 it cannot be merged</description>
+        <externalId>false</externalId>
+        <label>Score</label>
+        <precision>1</precision>
+        <required>true</required>
         <scale>0</scale>
         <trackTrending>false</trackTrending>
         <type>Number</type>
@@ -154,4 +153,5 @@ If value is 0 it cannot be merged</description>
     <pluralLabel>Code Reviews</pluralLabel>
     <searchLayouts/>
     <sharingModel>ControlledByParent</sharingModel>
+    <visibility>Public</visibility>
 </CustomObject>
