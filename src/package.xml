@@ -27,5 +27,15 @@
         <members>*</members>
         <name>CustomTab</name>
     </types>
+    <types>
+        <members>CodeReview__c-Code Review Layout</members>
+        <members>Employee__c-Employee Layout</members>
+        <members>Story__c-Story Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>Alhambra_User</members>
+        <name>PermissionSet</name>
+    </types>
     <version>40.0</version>
 </Package>
