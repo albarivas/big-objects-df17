@@ -1,11 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
-    <types>
-        <members>CodeReviewHistory__b</members>
-        <members>CodeReview__c</members>
-        <members>Employee__c</members>
-        <members>Story__c</members>
-        <name>CustomObject</name>
+	<types>
+		<members>CodeReviewHistory__b</members>
+		<members>CodeReview__c</members>
+		<members>Employee__c</members>
+		<members>Story__c</members>
+		<name>CustomObject</name>
+	</types>
+	<types>
+		<members>CodeReviewHistoryController</members>
+		<name>ApexClass</name>
+	</types>
+	<types>
+		<members>CodeReviewList</members>
+        <members>GetCodeReviews</members>
+        <members>CodeReviewsHistoryContainer</members>
+        <name>AuraDefinitionBundle</name>
     </types>
-    <version>33.0</version>
+	<version>40.0</version>
 </Package>

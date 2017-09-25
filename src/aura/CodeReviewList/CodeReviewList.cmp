@@ -1,0 +1,44 @@
+<aura:component implements="force:appHostable" controller="CodeReviewHistoryController" >   
+    <aura:attribute name="codeReviews" type="List"/>
+
+    <aura:handler name="init" value="{!this}" action="{!c.handleGetCodeReviewsEvent}"/>
+    <aura:handler event="c:GetCodeReviews" action="{!c.handleGetCodeReviewsEvent}"/>
+
+    <div class="slds-text-heading--large slds-p-around--small slds-m-top--large">Code Reviews History</div>
+	<lightning:layout horizontalAlign="space">
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            Story
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            Comments
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            Employee
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            Estimated Hours
+        </lightning:layoutItem>
+        <lightning:layoutItem flexibility="auto" padding="around-small">
+            Real Hours
+        </lightning:layoutItem>
+    </lightning:layout>
+    <aura:iteration items="{!v.codeReviews}" var="obj">
+        <lightning:layout horizontalAlign="space">
+        	<lightning:layoutItem flexibility="auto" padding="around-small">
+                {!obj.Story__c}
+	        </lightning:layoutItem>
+    	    <lightning:layoutItem flexibility="auto" padding="around-small">
+                {!obj.Comments__c}
+	        </lightning:layoutItem>
+    	    <lightning:layoutItem flexibility="auto" padding="around-small">
+        	    {!obj.Employee__c}
+       		</lightning:layoutItem>
+            <lightning:layoutItem flexibility="auto" padding="around-small">
+	            {!obj.EstimatedHours__c}
+        	</lightning:layoutItem>
+        	<lightning:layoutItem flexibility="auto" padding="around-small">
+            	{!obj.RealHours__c}
+            </lightning:layoutItem>
+	    </lightning:layout>
+    </aura:iteration>
+</aura:component>
