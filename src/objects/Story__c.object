@@ -54,6 +54,7 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>Description__c</fullName>
+        <encrypted>false</encrypted>
         <externalId>false</externalId>
         <label>Description</label>
         <required>false</required>
@@ -91,6 +92,7 @@
     </fields>
     <fields>
         <fullName>StoryName__c</fullName>
+        <encrypted>false</encrypted>
         <externalId>false</externalId>
         <label>Story Name</label>
         <length>80</length>

@@ -54,6 +54,7 @@
     <enableStreamingApi>true</enableStreamingApi>
     <fields>
         <fullName>EmployeeName__c</fullName>
+        <encrypted>false</encrypted>
         <externalId>false</externalId>
         <label>Employee Name</label>
         <length>32</length>
@@ -64,6 +65,7 @@
     </fields>
     <fields>
         <fullName>EmployeeSurname__c</fullName>
+        <encrypted>false</encrypted>
         <externalId>false</externalId>
         <label>Employee Surname</label>
         <length>80</length>

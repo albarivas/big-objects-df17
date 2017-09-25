@@ -64,6 +64,7 @@
     <fields>
         <fullName>CodeReviewDate__c</fullName>
         <defaultValue>Now()</defaultValue>
+        <encrypted>false</encrypted>
         <externalId>false</externalId>
         <label>CodeReview Date</label>
         <required>false</required>
@@ -72,6 +73,7 @@
     </fields>
     <fields>
         <fullName>Comments__c</fullName>
+        <encrypted>false</encrypted>
         <externalId>false</externalId>
         <label>Comments</label>
         <required>false</required>
