@@ -126,6 +126,10 @@
         <visibility>Visible</visibility>
     </tabSettings>
     <tabSettings>
+        <tab>Code_Review_History</tab>
+        <visibility>Visible</visibility>
+    </tabSettings>
+    <tabSettings>
         <tab>Employee__c</tab>
         <visibility>Visible</visibility>
     </tabSettings>

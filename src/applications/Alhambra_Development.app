@@ -12,6 +12,7 @@
     <tab>Story__c</tab>
     <tab>Employee__c</tab>
     <tab>CodeReview__c</tab>
+    <tab>Code_Review_History</tab>
     <uiType>Lightning</uiType>
     <utilityBar>Alhambra_Development_UtilityBar</utilityBar>
 </CustomApplication>

@@ -4,7 +4,7 @@
     <aura:handler name="init" value="{!this}" action="{!c.handleGetCodeReviewsEvent}"/>
     <aura:handler event="c:GetCodeReviews" action="{!c.handleGetCodeReviewsEvent}"/>
 
-    <div class="slds-text-heading--large slds-p-around--small slds-m-top--large">Code Reviews History</div>
+    <div class="slds-text-heading--large slds-p-around--small slds-m-top--large">Code Review History</div>
 	<lightning:layout horizontalAlign="space">
         <lightning:layoutItem flexibility="auto" padding="around-small">
             Story
