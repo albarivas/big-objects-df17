@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+	<deploymentStatus>Deployed</deploymentStatus>
+	<fields>
+		<fullName>CanBeMerged__c</fullName>
+		<label>Can Be Merged</label>
+		<length>80</length>
+		<type>Text</type>
+	</fields> 
+	<fields>
+		<fullName>CodeReviewDate__c</fullName>
+		<label>Code Review Date</label>
+		<type>DateTime</type>
+		<required>true</required>
+	</fields>
+	<fields>
+		<fullName>Comments__c</fullName>
+		<label>Comments</label>
+		<length>255</length>
+		<type>Text</type>
+	</fields>
+	<fields>
+		<fullName>Employee__c</fullName>
+		<label>Employee</label>
+		<referenceTo>Employee__c</referenceTo>
+		<relationshipName>CodeReviewsHistory</relationshipName>
+		<required>true</required>
+		<type>Lookup</type>
+	</fields>
+	<fields>
+		<fullName>EstimatedHours__c</fullName>
+		<label>Estimated Hours</label>
+		<precision>18</precision>
+		<scale>0</scale>
+		<type>Number</type>
+		<required>true</required>
+	</fields>
+	<fields>
+		<fullName>RealHours__c</fullName>
+		<label>Real Hours</label>
+		<precision>18</precision>
+		<scale>0</scale>
+		<type>Number</type>
+		<required>true</required>
+	</fields>
+	<fields>
+		<fullName>Score__c</fullName>
+		<label>Score</label>
+		<precision>1</precision>
+		<scale>0</scale>
+		<type>Number</type>
+	</fields>
+	<fields>
+		<fullName>Story__c</fullName>
+		<label>Story__c</label>
+		<referenceTo>Story__c</referenceTo>
+		<relationshipName>CodeReviewsHistory</relationshipName>
+		<required>true</required>
+		<type>Lookup</type>
+	</fields>
+	<indexes>
+		<type>PRIMARY</type> 
+		<fullName>CodeReviewPK</fullName>
+		<fields>
+			<name>Employee__c</name>
+			<sortDirection>DESC</sortDirection>
+		</fields>
+		<fields>
+			<name>EstimatedHours__c</name>
+			<sortDirection>DESC</sortDirection>
+		</fields>
+		<fields>
+			<name>RealHours__c</name>
+			<sortDirection>DESC</sortDirection>
+		</fields>
+	</indexes>
+	<label>Code Review History</label>
+	<pluralLabel>Code Reviews History</pluralLabel>
+</CustomObject>
