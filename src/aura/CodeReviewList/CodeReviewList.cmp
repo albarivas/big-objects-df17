@@ -1,44 +1,84 @@
 <aura:component implements="force:appHostable" controller="CodeReviewHistoryController" >   
     <aura:attribute name="codeReviews" type="List"/>
+    <aura:attribute name="newCodeReview" type="Map" default="{'Story':'S-0001','Comments':'I love your code!','Employee':'E-0001','EstimatedHours':'5','RealHours':'7', 'Score':'9'}"/>
 
-    <aura:handler name="init" value="{!this}" action="{!c.handleGetCodeReviewsEvent}"/>
-    <aura:handler event="c:GetCodeReviews" action="{!c.handleGetCodeReviewsEvent}"/>
+    <aura:handler name="init" value="{!this}" action="{!c.loadCodeReviews}"/>
 
-    <div class="slds-text-heading--large slds-p-around--small slds-m-top--large">Code Review History</div>
-	<lightning:layout horizontalAlign="space">
-        <lightning:layoutItem flexibility="auto" padding="around-small">
-            Story
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="around-small">
-            Comments
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="around-small">
-            Employee
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="around-small">
-            Estimated Hours
-        </lightning:layoutItem>
-        <lightning:layoutItem flexibility="auto" padding="around-small">
-            Real Hours
-        </lightning:layoutItem>
-    </lightning:layout>
-    <aura:iteration items="{!v.codeReviews}" var="obj">
-        <lightning:layout horizontalAlign="space">
-        	<lightning:layoutItem flexibility="auto" padding="around-small">
-                {!obj.Story__c}
-	        </lightning:layoutItem>
-    	    <lightning:layoutItem flexibility="auto" padding="around-small">
-                {!obj.Comments__c}
-	        </lightning:layoutItem>
-    	    <lightning:layoutItem flexibility="auto" padding="around-small">
-        	    {!obj.Employee__c}
-       		</lightning:layoutItem>
-            <lightning:layoutItem flexibility="auto" padding="around-small">
-	            {!obj.EstimatedHours__c}
-        	</lightning:layoutItem>
-        	<lightning:layoutItem flexibility="auto" padding="around-small">
-            	{!obj.RealHours__c}
+    <div class="slds-text-heading--large slds-p-around--small slds-m-top--large slds-color__text_gray-1">Code Review History</div>
+    <div class="slds-page-header" role="banner">
+    	<lightning:layout multipleRows="true">
+        	<lightning:layoutItem size="12" padding="around-small">
+                <p class="slds-text-title--caps slds-line-height--reset">New Code Review History:</p>
+         	</lightning:layoutItem>
+           	<lightning:layoutItem class="slds-align_absolute-center" size="2">
+                Story: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Story}"/>
             </lightning:layoutItem>
-	    </lightning:layout>
-    </aura:iteration>
+            <lightning:layoutItem class="slds-align_absolute-center" size="3">
+                Comments: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Comments}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-align_absolute-center" size="2">
+                Employee: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Employee}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-align_absolute-center" size="1">
+                Estimated Hours: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.EstimatedHours}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-align_absolute-center" size="1">
+                Real Hours: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.RealHours}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-align_absolute-center" size="1">
+                Score: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Score}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem size="12" padding="around-small">
+	        	<lightning:button onclick="{!c.addCodeReview}" class="slds-button slds-button--neutral">Add</lightning:button>
+            </lightning:layoutItem>
+        </lightning:layout>
+    </div>
+    <div class="slds-box slds-theme_default slds-m-top_small">
+        <lightning:layout multipleRows="true">
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="2" padding="around-small">
+                Story
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="4" padding="around-small">
+                Comments
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="2" padding="around-small">
+                Employee
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
+                Estimated Hours
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
+                Real Hours
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
+                Score
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
+                Date
+            </lightning:layoutItem>
+            <aura:iteration items="{!v.codeReviews}" var="obj">
+                <lightning:layoutItem class="slds-align_absolute-center" size="2" padding="around-small">
+                    {!obj.Story__r.Name}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="4" padding="around-small">
+                    {!obj.Comments__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="2" padding="around-small">
+                    {!obj.Employee__r.Name}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
+                    {!obj.EstimatedHours__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
+                    {!obj.RealHours__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
+                    {!obj.Score__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
+                    <ui:outputDate value="{!obj.CodeReviewDate__c}"/>
+                </lightning:layoutItem>
+	        </aura:iteration>
+        </lightning:layout>        
+    </div>
 </aura:component>
