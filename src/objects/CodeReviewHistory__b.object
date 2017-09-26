@@ -80,7 +80,7 @@
     <indexes>
         <fullName>CodeReviewPK</fullName>
         <fields>
-            <name>Employee__c</name>
+            <name>CodeReviewDate__c</name>
             <sortDirection>DESC</sortDirection>
         </fields>
         <fields>
