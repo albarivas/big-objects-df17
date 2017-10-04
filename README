@@ -1,0 +1,4 @@
+1. Activate and deploy my domain in your org (you will need it to work with Lightning Components)
+2. Deploy the app
+3. Assign "Alhambra User" permission set to your User
+4. Load data with script loadCodeReviewsHistory.cls
