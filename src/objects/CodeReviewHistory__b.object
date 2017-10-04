@@ -60,11 +60,11 @@
     <indexes>
         <fullName>CodeReviewPK</fullName>
         <fields>
-            <name>Story__c</name>
+            <name>Employee__c</name>
             <sortDirection>DESC</sortDirection>
         </fields>
         <fields>
-            <name>Employee__c</name>
+            <name>Story__c</name>
             <sortDirection>DESC</sortDirection>
         </fields>
         <fields>

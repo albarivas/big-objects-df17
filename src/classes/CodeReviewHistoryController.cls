@@ -9,8 +9,8 @@ public with sharing class CodeReviewHistoryController {
 	                CodeReviewDate__c
                 				 FROM CodeReviewHistory__b
                 			 ORDER BY 
-                	   Story__c DESC,
-                	Employee__c DESC,
+                	 Employee__c DESC,
+                		Story__c DESC,
               CodeReviewDate__c DESC];
 	}
 
