@@ -89,7 +89,7 @@ List<CodeReviewHistory__b> crs = new List<CodeReviewHistory__b>();
 
 for (Employee__c employee : employees) {
     for (Story__c story : stories) {
-        Integer rand1 = Math.round(Math.random()*10);
+        Integer rand1 = Math.round(Math.random()*9);
         CodeReviewHistory__b cr = new CodeReviewHistory__b();
         cr.Story__c = story.Id;
         cr.Employee__c = employee.Id;
@@ -101,4 +101,9 @@ for (Employee__c employee : employees) {
     }
 }
 
-Database.insertImmediate(crs);
+List<Database.SaveResult> srs = Database.insertImmediate(crs);
+
+for (Database.SaveResult sr : srs) {
+	if (!sr.isSuccess())
+		System.assert(false, 'Error:' + sr.getErrors());
+}

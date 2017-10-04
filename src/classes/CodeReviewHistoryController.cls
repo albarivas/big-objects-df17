@@ -2,11 +2,8 @@ public with sharing class CodeReviewHistoryController {
 
 	@AuraEnabled
 	public static List<CodeReviewHistory__b> getCodeReviewsHistory() {
-		return [SELECT Story__r.Name, 
-                		 Comments__c, 
-                	Employee__r.Name, 
-                  			Score__c,
-	                CodeReviewDate__c
+		return [SELECT Story__r.Name, Story__r.StoryName__c,Employee__r.Name, Employee__r.EmployeeName__c, 
+                		 Employee__r.EmployeeSurname__c, CodeReviewDate__c, Comments__c, Score__c
                 				 FROM CodeReviewHistory__b
                 			 ORDER BY 
                 	 Employee__c DESC,

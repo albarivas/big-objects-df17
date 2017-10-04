@@ -13,13 +13,13 @@
            	<lightning:layoutItem class="slds-align_absolute-center" size="2">
                 Story: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Story}"/>
             </lightning:layoutItem>
-            <lightning:layoutItem class="slds-align_absolute-center" size="3">
-                Comments: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Comments}"/>
-            </lightning:layoutItem>
             <lightning:layoutItem class="slds-align_absolute-center" size="2">
                 Reviewer: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Employee}"/>
             </lightning:layoutItem>
-            <lightning:layoutItem class="slds-align_absolute-center" size="1">
+            <lightning:layoutItem class="slds-align_absolute-center" size="5">
+                Comments: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Comments}"/>
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-align_absolute-center" size="2">
                 Score: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Score}"/>
             </lightning:layoutItem>
             <lightning:layoutItem size="12" padding="around-small">
@@ -29,36 +29,54 @@
     </div>
     <div class="slds-box slds-theme_default slds-m-top_small">
         <lightning:layout multipleRows="true">
-            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="2" padding="around-small">
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
                 Story
             </lightning:layoutItem>
-            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="4" padding="around-small">
-                Comments
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="3" padding="around-small">
+                Story Name
             </lightning:layoutItem>
-            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="2" padding="around-small">
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
                 Reviewer
             </lightning:layoutItem>
             <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
-                Score
+                Reviewer Name
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
+                Reviewer Surname
             </lightning:layoutItem>
             <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
                 Date
             </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="3" padding="around-small">
+                Comments
+            </lightning:layoutItem>
+            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
+                Score
+            </lightning:layoutItem>
             <aura:iteration items="{!v.codeReviews}" var="obj">
-                <lightning:layoutItem class="slds-align_absolute-center" size="2" padding="around-small">
+            	<lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
                     {!obj.Story__r.Name}
                 </lightning:layoutItem>
-                <lightning:layoutItem class="slds-align_absolute-center" size="4" padding="around-small">
-                    {!obj.Comments__c}
+                <lightning:layoutItem class="slds-align_absolute-center" size="3" padding="around-small">
+                    {!obj.Story__r.StoryName__c}
                 </lightning:layoutItem>
-                <lightning:layoutItem class="slds-align_absolute-center" size="2" padding="around-small">
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
                     {!obj.Employee__r.Name}
                 </lightning:layoutItem>
                 <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
-                    {!obj.Score__c}
+                    {!obj.Employee__r.EmployeeName__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
+                    {!obj.Employee__r.EmployeeSurname__c}
                 </lightning:layoutItem>
                 <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
                     <ui:outputDate value="{!obj.CodeReviewDate__c}"/>
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="3" padding="around-small">
+                    {!obj.Comments__c}
+                </lightning:layoutItem>
+                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
+                    {!obj.Score__c}
                 </lightning:layoutItem>
 	        </aura:iteration>
         </lightning:layout>        
