@@ -93,28 +93,6 @@
         <type>Lookup</type>
     </fields>
     <fields>
-        <fullName>EstimatedHours__c</fullName>
-        <externalId>false</externalId>
-        <label>Estimated Hours</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>RealHours__c</fullName>
-        <externalId>false</externalId>
-        <label>RealHours</label>
-        <precision>18</precision>
-        <required>false</required>
-        <scale>0</scale>
-        <trackTrending>false</trackTrending>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
         <fullName>Score__c</fullName>
         <defaultValue>0</defaultValue>
         <description>If value is 1 then the process can be merged

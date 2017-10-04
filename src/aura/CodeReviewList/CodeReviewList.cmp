@@ -1,6 +1,6 @@
 <aura:component implements="force:appHostable" controller="CodeReviewHistoryController" >   
     <aura:attribute name="codeReviews" type="List"/>
-    <aura:attribute name="newCodeReview" type="Map" default="{'Story':'S-0001','Comments':'I love your code!','Employee':'E-0001','EstimatedHours':'5','RealHours':'7', 'Score':'9'}"/>
+    <aura:attribute name="newCodeReview" type="Map" default="{'Story':'S-0001','Comments':'I love your code!','Employee':'E-0001','Score':'9'}"/>
 
     <aura:handler name="init" value="{!this}" action="{!c.loadCodeReviews}"/>
 
@@ -17,13 +17,7 @@
                 Comments: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Comments}"/>
             </lightning:layoutItem>
             <lightning:layoutItem class="slds-align_absolute-center" size="2">
-                Employee: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Employee}"/>
-            </lightning:layoutItem>
-            <lightning:layoutItem class="slds-align_absolute-center" size="1">
-                Estimated Hours: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.EstimatedHours}"/>
-            </lightning:layoutItem>
-            <lightning:layoutItem class="slds-align_absolute-center" size="1">
-                Real Hours: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.RealHours}"/>
+                Reviewer: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Employee}"/>
             </lightning:layoutItem>
             <lightning:layoutItem class="slds-align_absolute-center" size="1">
                 Score: <ui:inputText class="slds-m-left_xx-small" value="{!v.newCodeReview.Score}"/>
@@ -42,13 +36,7 @@
                 Comments
             </lightning:layoutItem>
             <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="2" padding="around-small">
-                Employee
-            </lightning:layoutItem>
-            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
-                Estimated Hours
-            </lightning:layoutItem>
-            <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
-                Real Hours
+                Reviewer
             </lightning:layoutItem>
             <lightning:layoutItem class="slds-text-heading_small slds-align_absolute-center" size="1" padding="around-small">
                 Score
@@ -65,12 +53,6 @@
                 </lightning:layoutItem>
                 <lightning:layoutItem class="slds-align_absolute-center" size="2" padding="around-small">
                     {!obj.Employee__r.Name}
-                </lightning:layoutItem>
-                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
-                    {!obj.EstimatedHours__c}
-                </lightning:layoutItem>
-                <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
-                    {!obj.RealHours__c}
                 </lightning:layoutItem>
                 <lightning:layoutItem class="slds-align_absolute-center" size="1" padding="around-small">
                     {!obj.Score__c}

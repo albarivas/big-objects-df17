@@ -32,31 +32,11 @@
     <fields>
         <fullName>Employee__c</fullName>
         <externalId>false</externalId>
-        <label>Employee</label>
+        <label>Reviewer</label>
         <referenceTo>Employee__c</referenceTo>
         <relationshipName>CodeReviewsHistory</relationshipName>
         <required>true</required>
         <type>Lookup</type>
-    </fields>
-    <fields>
-        <fullName>EstimatedHours__c</fullName>
-        <externalId>false</externalId>
-        <label>Estimated Hours</label>
-        <precision>18</precision>
-        <required>true</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
-    </fields>
-    <fields>
-        <fullName>RealHours__c</fullName>
-        <externalId>false</externalId>
-        <label>Real Hours</label>
-        <precision>18</precision>
-        <required>true</required>
-        <scale>0</scale>
-        <type>Number</type>
-        <unique>false</unique>
     </fields>
     <fields>
         <fullName>Score__c</fullName>
@@ -80,15 +60,15 @@
     <indexes>
         <fullName>CodeReviewPK</fullName>
         <fields>
+            <name>Story__c</name>
+            <sortDirection>DESC</sortDirection>
+        </fields>
+        <fields>
+            <name>Employee__c</name>
+            <sortDirection>DESC</sortDirection>
+        </fields>
+        <fields>
             <name>CodeReviewDate__c</name>
-            <sortDirection>DESC</sortDirection>
-        </fields>
-        <fields>
-            <name>EstimatedHours__c</name>
-            <sortDirection>DESC</sortDirection>
-        </fields>
-        <fields>
-            <name>RealHours__c</name>
             <sortDirection>DESC</sortDirection>
         </fields>
     </indexes>
