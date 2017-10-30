@@ -1,3 +1,5 @@
+// Execute in a transaction to create employees, stories and code review records
+
 List<Employee__c> employees = new List<Employee__c>();
 List<Story__c> stories = new List<Story__c>();
 
@@ -82,7 +84,24 @@ stories.add(story);
 insert employees;
 insert stories;
 
-// Execute in different transaction
+List<CodeReview__c> crs = new List<CodeReview__c>();
+
+for (Employee__c employee : employees) {
+    for (Story__c story : stories) {
+        Integer rand1 = Math.round(Math.random()*9);
+        CodeReview__c cr = new CodeReview__c();
+        cr.Story__c = story.Id;
+        cr.Employee__c = employee.Id;
+        cr.Comments__c = 'I am a very old code review record :(, I need archiving!';
+        cr.Score__c = rand1;
+        cr.CodeReviewDate__c = System.now();
+        crs.add(cr);
+    }
+}
+
+insert crs;
+
+// Execute in a different transaction to create code review history records
 List<Employee__c> employees = [SELECT Id FROM Employee__c];
 List<Story__c> stories = [SELECT Id FROM Story__c];
 List<CodeReviewHistory__b> crs = new List<CodeReviewHistory__b>();
