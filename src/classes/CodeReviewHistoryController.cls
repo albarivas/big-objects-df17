@@ -1,15 +1,38 @@
-public with sharing class CodeReviewHistoryController {
+public with sharing class CodeReviewHistoryController
+{
 
+    private static List<CodeReviewHistory__b> codeReviewsHistory;
+    
+    public CodeReviewHistoryController()
+    {
+        getCodeReviewsHistory();
+    }
+	
 	@AuraEnabled
-	public static List<CodeReviewHistory__b> getCodeReviewsHistory() {
-		return [SELECT Story__r.Name, Story__r.StoryName__c,Employee__r.Name, Employee__r.EmployeeName__c, 
-                		 Employee__r.EmployeeSurname__c, CodeReviewDate__c, Comments__c, Score__c
-                				 FROM CodeReviewHistory__b
-                			 ORDER BY 
-                	 Employee__c DESC,
-                		Story__c DESC,
-              CodeReviewDate__c DESC];
-	}
+    public static List<CodeReviewHistory__b> getCodeReviewsHistory()
+    {
+        codeReviewsHistory = [SELECT Story__c,
+										Story__r.Name, 
+                              			Story__r.StoryName__c,
+										Employee__c,
+                              			Employee__r.Name, 
+                              			Employee__r.EmployeeName__c, 
+                              			Employee__r.EmployeeSurname__c, 
+                              			CodeReviewDate__c, 
+                              			Comments__c, 
+                              			Score__c
+                                 FROM CodeReviewHistory__b
+									ORDER BY 
+									Employee__c DESC,
+									Story__c DESC,
+									CodeReviewDate__c DESC];
+        return codeReviewsHistory;
+    }
+
+    public static void setCodeReviewsHistory(List<CodeReviewHistory__b> value)
+    {
+        codeReviewsHistory = value;
+    }
 
 	@AuraEnabled
 	public static void addCodeReviewHistory(String newCodeReviewSerialized) {

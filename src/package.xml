@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Package xmlns="http://soap.sforce.com/2006/04/metadata">
     <types>
-        <members>CodeReviewHistoryController</members>
+        <members>*</members>
         <name>ApexClass</name>
     </types>
     <types>
@@ -10,15 +10,20 @@
     </types>
     <types>
         <members>*</members>
+        <name>ApexPages</name>
+    </types>
+    <types>
+        <members>*</members>
         <name>ContentAsset</name>
     </types>
     <types>
-        <members>Alhambra_Development</members>
+        <members>*</members>
         <name>CustomApplication</name>
     </types>
     <types>
         <members>CodeReviewHistory__b</members>
         <members>CodeReview__c</members>
+        <members>CodeReviewReport__c</members>
         <members>Employee__c</members>
         <members>Story__c</members>
         <name>CustomObject</name>
@@ -28,13 +33,11 @@
         <name>CustomTab</name>
     </types>
     <types>
-        <members>CodeReview__c-Code Review Layout</members>
-        <members>Employee__c-Employee Layout</members>
-        <members>Story__c-Story Layout</members>
+        <members>*</members>
         <name>Layout</name>
     </types>
     <types>
-        <members>Alhambra_User</members>
+        <members>*</members>
         <name>PermissionSet</name>
     </types>
     <version>40.0</version>

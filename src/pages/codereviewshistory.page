@@ -1,0 +1,44 @@
+<apex:page showHeader="true" sidebar="true" controller="CodeReviewHistoryController">
+	<apex:form >
+		<apex:pageBlock title="Code Review History Records">			
+			<apex:pageMessages />
+			<apex:pageBlockSection title="Code Review History" columns="1" collapsible="false">				
+				<apex:pageBlockTable value="{!codeReviewsHistory}" var="crHistory">
+                    
+                    <apex:column headerValue="Story">
+	                    <apex:outputField value="{!crHistory.Story__c}"/>
+	                </apex:column>
+                    
+                    <apex:column headerValue="Story">
+	                    <apex:outputField value="{!crHistory.Story__r.StoryName__c}"/>
+	                </apex:column>
+                    
+					<apex:column headerValue="Reviewer">
+	                    <apex:outputField value="{!crHistory.Employee__c}"/>
+	                </apex:column>
+                    
+                    <apex:column headerValue="Reviewer Name">
+	                    <apex:outputField value="{!crHistory.Employee__r.EmployeeName__c}"/>
+	                </apex:column>
+
+                    <apex:column headerValue="Reviewer Surname">
+	                    <apex:outputField value="{!crHistory.Employee__r.EmployeeSurname__c}"/>
+	                </apex:column>
+                    
+                    <apex:column headerValue="Date">
+	                    <apex:outputField value="{!crHistory.CodeReviewDate__c}"/>
+	                </apex:column>
+
+	                <apex:column headerValue="Comments">
+	                    <apex:outputField value="{!crHistory.Comments__c}"/>
+	                </apex:column>
+
+	                <apex:column headerValue="Score">
+	                    <apex:outputField value="{!crHistory.Score__c}"/>
+	                </apex:column>
+  					
+                </apex:pageBlockTable>
+			</apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
