@@ -1,0 +1,15 @@
+{
+	"query" : "Select IsProcessed__c,IsProcessedToNumber__c,IsProcessedToString__c From Account",
+	"operation" : "insert",
+	"targetObject" : "MasterBigObject__b",	
+	"targetFieldMap" : {
+		"IsProcessedToString__c" : "CheckBoxFromText__c",
+		"IsProcessedToNumber__c" : "CheckBoxFromNumber__c"
+	},
+	"targetValueMap" : {
+		"AAAA" : "MasterIdentifier__c"
+	}
+}
+
+
+

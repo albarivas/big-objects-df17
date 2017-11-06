@@ -1,0 +1,1 @@
+SELECT CanBeMerged__c,CodeReviewDate__c,Comments__c,Employee__c,Score__c,Story__c FROM CodeReviewHistory__b

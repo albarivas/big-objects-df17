@@ -1,0 +1,20 @@
+
+
+{
+	"query" : "Select Name, BillingStreet, BillingCity, BillingCountry From Account",
+				
+	"operation" : "insert",
+
+	"targetObject" : "Vendor__c",
+	
+	"targetFieldMap" : {
+		"Name" : "VendorName__c",
+		"BillingStreet" : "Address_c",
+		"BillingCity" : "City__c"
+	},
+	
+	"targetValueMap" : {
+		"Spain" : "Country__c"
+	}
+}
+

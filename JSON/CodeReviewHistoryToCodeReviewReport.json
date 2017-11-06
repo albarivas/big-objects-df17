@@ -1,0 +1,17 @@
+
+
+{
+	"query" : "SELECT Employee__c, AVG(Score__c) sc FROM CodeReviewHistory__b group by Employee__c",				
+
+	"operation" : "insert",
+
+	"targetObject" : "CodeReviewReport__c",
+	
+	"targetFieldMap" : {
+		"Employee__c" : "Employee__c",
+		"sc" : "Score__c"
+	}
+}
+
+
+

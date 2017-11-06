@@ -1,0 +1,18 @@
+
+{
+	"query": "Select Name, CanBeMerged__c, CodeReviewDate__c, Comments__c, Employee__c, Score__c, Story__c From CodeReview__c ",
+
+	"operation": "insert",
+
+	"targetObject": "CodeReviewHistory__b",
+
+	"targetFieldMap": {
+		"CanBeMerged__c": "CanBeMerged__c",
+		"CodeReviewDate__c": "CodeReviewDate__c",
+		"Comments__c": "Comments__c",
+		"Employee__c": "Employee__c",
+		"Score__c": "Score__c",
+		"Story__c": "Story__c"
+	}
+}
+
